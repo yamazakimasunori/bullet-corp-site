@@ -10,7 +10,7 @@
   --white: #ffffff;
   --line: #e6eef0;
   --shadow: 0 22px 60px rgba(38, 54, 66, 0.14);
-  --photo: url("https://upload.wikimedia.org/wikipedia/commons/6/65/Japanese_classroom.jpg");
+  --photo: url("assets/images/hero-classroom.png"), url("https://upload.wikimedia.org/wikipedia/commons/6/65/Japanese_classroom.jpg");
 }
 
 * { box-sizing: border-box; }
