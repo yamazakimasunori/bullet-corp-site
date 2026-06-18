@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
       <a class="brand" href="#top" aria-label="株式会社バレット ホーム">
         <img class="brand-logo" src="assets/logo/アイコン.png" alt="株式会社バレット ロゴ" />
         <span><strong>bullet</strong><small>Co., Ltd.</small></span>
@@ -64,15 +64,15 @@
             </div>
           </article>
           <figure class="mission-photo image-card classroom-card">
-            <img src="assets/images/class01.png" alt="タブレットを使った学校授業の様子" />
+            <img src="assets/images/meeting.png" alt="デジタルマーケティングの打ち合わせイメージ" />
           </figure>
           <figure class="mission-photo support-card">
-            <img src="assets/images/panel.png" alt="ノートPCで学習する児童の様子" />
+            <img src="assets/images/class01.png" alt="タブレットを使った学校授業の様子" />
           </figure>
           <article class="mission-item">
             <span>02</span>
             <div>
-              <h3>学校現場の教育をICTで楽しく効率的に</h3>
+              <h3>教育をもっと楽しく効率的に！</h3>
               <p>先生と児童が楽しく使えるICT環境を設計し、学校現場の学びと運用を効率化します。</p>
             </div>
           </article>
@@ -99,9 +99,9 @@
       <section class="message photo-section" id="education">
         <div class="message-panel">
           <p class="eyebrow">Message</p>
-          <h2>教育現場で、たのしく続けられるICTを。</h2>
+          <h2>教育現場で、たのしく<br />続けられるICTを。</h2>
           <p>
-            公立学校向けの事業では、透明性・安全性・継続性を大切にしています。導入して終わりではなく、現場で使い続けられる設計、運用、改善まで丁寧に伴走します。
+            学校向けの事業では、透明性・安全性・継続性を大切にしています。導入して終わりではなく、現場で使い続けられる設計、運用、改善までを、丁寧に実行いたします。
           </p>
         </div>
       </section>
@@ -110,7 +110,7 @@
         <p class="mega-title" aria-hidden="true">SERVICE</p>
         <div class="section-heading centered">
           <p class="eyebrow">Services</p>
-          <h2>企画から運用まで、トータルでサポート</h2>
+          <h2>企画から運用まで、<br />トータルでサポート</h2>
         </div>
         <div class="service-grid">
           <article><span>01</span><h3>Webマーケティング</h3><p>教育機関・自治体・企業の目的に合わせ、情報発信、集客、広報設計、改善運用まで一貫して支援します。</p></article>
@@ -149,5 +149,13 @@
       <small>Hero photo: assets/images/hero-classroom.png</small>
       <a href="#top">PAGE TOP</a>
     </footer>
+      <script>
+      const siteHeader = document.getElementById("siteHeader");
+      const updateHeader = () => {
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 60);
+      };
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+    </script>
   </body>
 </html>

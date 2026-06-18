@@ -13,8 +13,8 @@ The CSS uses that local image first and falls back to the existing remote classr
 Place the classroom photos used in the MISSION section at:
 
 ```text
+assets/images/meeting.png
 assets/images/class01.png
-assets/images/panel.png
 ```
 
-These images replace the earlier SVG illustrations in the mission grid.
+`meeting.png` is used for 01 Digital Marketing, and `class01.png` is used for 02 Education ICT.
