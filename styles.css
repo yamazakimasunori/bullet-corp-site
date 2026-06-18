@@ -180,3 +180,7 @@ dd { margin: 0; color: var(--text); }
 .policy-content .circled-list li { counter-increment: circled; position: relative; padding-left: 2.2em; margin: 12px 0; }
 .policy-content .circled-list li::before { content: counter(circled); position: absolute; left: 0; top: .1em; display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; color: var(--white); background: var(--cyan); border-radius: 50%; font-size: .78em; font-weight: 900; }
 .policy-date { padding: 24px; background: #e9fbff; }
+
+.privacy-page .site-header { color: var(--ink); background: rgba(255, 255, 255, .96); box-shadow: 0 10px 32px rgba(38, 54, 66, .12); backdrop-filter: blur(14px); }
+.privacy-page .site-header .brand-logo { filter: brightness(0); }
+.privacy-page .site-header .nav-button { color: var(--white); background: var(--cyan); border-color: var(--cyan); }

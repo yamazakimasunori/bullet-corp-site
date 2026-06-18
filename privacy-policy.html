@@ -13,8 +13,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="privacy-page">
-    <header class="site-header is-scrolled">
+  <body class="privacy-page" id="top">
+    <header class="site-header" id="siteHeader">
       <a class="brand" href="/" aria-label="株式会社バレット ホーム">
         <img class="brand-logo" src="assets/logo/アイコン.png" alt="株式会社バレット ロゴ" />
       </a>
@@ -160,8 +160,16 @@
           <a href="https://forms.gle/RUbGqja7ydPH21GW9" target="_blank" rel="noopener">お問い合わせ</a>
         </nav>
         <p>© bullet Co., Ltd.</p>
-        <a class="page-top" href="/">TOP</a>
+        <a class="page-top" href="#top">PAGE TOP</a>
       </div>
     </footer>
+    <script>
+      const siteHeader = document.getElementById("siteHeader");
+      const updateHeader = () => {
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 60);
+      };
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+    </script>
   </body>
 </html>
