@@ -54,39 +54,39 @@
 
       <section class="mission" id="mission">
         <p class="mega-title" aria-hidden="true">MISSION</p>
-        <div class="section-heading centered">
+        <div class="section-heading centered reveal">
           <p class="eyebrow">Mission</p>
           <h2>世の中をもっと素敵に、便利にする</h2>
         </div>
         <div class="mission-grid">
-          <article class="mission-item">
+          <article class="mission-item reveal">
             <span>01</span>
             <div>
               <h3>デジタルマーケティング事業</h3>
               <p>企業・自治体・教育機関の目的に合わせ、情報発信、集客、広報設計、改善運用までトータルで支援します。</p>
             </div>
           </article>
-          <figure class="mission-photo image-card classroom-card">
+          <figure class="mission-photo image-card classroom-card reveal">
             <img src="assets/images/meeting.png" alt="デジタルマーケティングの打ち合わせイメージ" />
           </figure>
-          <figure class="mission-photo support-card">
+          <figure class="mission-photo support-card reveal">
             <img src="assets/images/class01.png" alt="タブレットを使った学校授業の様子" />
           </figure>
-          <article class="mission-item">
+          <article class="mission-item reveal">
             <span>02</span>
             <div>
               <h3>教育をもっと楽しく効率的に！</h3>
               <p>先生と児童が楽しく使えるICT環境を設計し、学校現場の学びと運用を効率化します。</p>
             </div>
           </article>
-          <article class="mission-item">
+          <article class="mission-item reveal">
             <span>03</span>
             <div>
               <h3>世の中をもっと素敵に便利にする</h3>
               <p>固定観念にとらわれない発想と実行力で、日々の暮らしや仕事に役立つサービスづくりに取り組みます。</p>
             </div>
           </article>
-          <div class="profile-card">
+          <div class="profile-card reveal">
             <h3>Company</h3>
             <dl>
               <div><dt>商号</dt><dd>株式会社バレット / bullet Co., Ltd.</dd></div>
@@ -100,7 +100,7 @@
       </section>
 
       <section class="message photo-section" id="education">
-        <div class="message-panel">
+        <div class="message-panel reveal">
           <p class="eyebrow">Message</p>
           <h2>教育現場で、たのしく<br />続けられるICTを。</h2>
           <p>
@@ -111,19 +111,19 @@
 
       <section class="services" id="services">
         <p class="mega-title" aria-hidden="true">SERVICE</p>
-        <div class="section-heading centered">
+        <div class="section-heading centered reveal">
           <p class="eyebrow">Services</p>
           <h2>企画から運用まで、<br />トータルでサポート</h2>
         </div>
         <div class="service-grid">
-          <article><span>01</span><h3>Webマーケティング</h3><p>教育機関・自治体・企業の目的に合わせ、情報発信、集客、広報設計、改善運用まで一貫して支援します。</p></article>
-          <article><span>02</span><h3>Webサービス企画/開発/運用</h3><p>利用者にとってわかりやすく、現場で使い続けられるWebサービスの企画、開発、運用改善を行います。</p></article>
-          <article><span>03</span><h3>ICT・システム支援</h3><p>コンピュータソフト、ICTマネジメント、映像・音響機器のシステム設計、導入、運用支援に対応します。</p></article>
+          <article class="reveal"><span>01</span><h3>Webマーケティング</h3><p>教育機関・自治体・企業の目的に合わせ、情報発信、集客、広報設計、改善運用まで一貫して支援します。</p></article>
+          <article class="reveal"><span>02</span><h3>Webサービス企画/開発/運用</h3><p>利用者にとってわかりやすく、現場で使い続けられるWebサービスの企画、開発、運用改善を行います。</p></article>
+          <article class="reveal"><span>03</span><h3>ICT・システム支援</h3><p>コンピュータソフト、ICTマネジメント、映像・音響機器のシステム設計、導入、運用支援に対応します。</p></article>
         </div>
       </section>
 
       <section class="clients" id="clients">
-        <div class="section-heading centered">
+        <div class="section-heading centered reveal">
           <p class="eyebrow">Clients</p>
           <h2>取引先企業</h2>
           <p>これまで多様な業界の企業と連携し、企画・制作・ICT領域の課題解決に取り組んできました。</p>
@@ -135,7 +135,7 @@
       </section>
 
       <section class="contact" id="contact">
-        <div class="section-heading centered">
+        <div class="section-heading centered reveal">
           <p class="eyebrow">Contact</p>
           <h2>お問い合わせ</h2>
           <p>学校等の教育機関では、セキュリティ設定により弊社からのメール受信が拒否される場合があります。返信がない場合は、以下のドメインからのメールを受信できるよう設定をお願いいたします。</p>
@@ -167,6 +167,28 @@
       };
       updateHeader();
       window.addEventListener("scroll", updateHeader, { passive: true });
+
+      const revealElements = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        revealElements.forEach((element) => element.classList.add("is-visible"));
+      } else {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -12%", threshold: 0.12 },
+        );
+
+        revealElements.forEach((element, index) => {
+          element.style.setProperty("--reveal-delay", `${Math.min(index % 3, 2) * 90}ms`);
+          revealObserver.observe(element);
+        });
+      }
     </script>
   </body>
 </html>
