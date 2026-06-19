@@ -21,7 +21,11 @@
       <a class="brand" href="#top" aria-label="株式会社バレット ホーム">
         <img class="brand-logo" src="assets/logo/アイコン.png" alt="株式会社バレット ロゴ" />
       </a>
-      <nav class="global-nav" aria-label="主要ナビゲーション">
+      <button class="menu-toggle" type="button" aria-controls="globalNav" aria-expanded="false">
+        <span class="menu-toggle__label">MENU</span>
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav class="global-nav" id="globalNav" aria-label="主要ナビゲーション">
         <a href="#mission">会社情報</a>
         <a href="#services">事業内容</a>
         <a href="#clients">取引先企業</a>
@@ -39,11 +43,10 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <p class="eyebrow light">Collaboration and Innovation</p>
-          <h1>学びを支える現場に、<br />テクノロジーを。</h1>
+          <h1>学びを支える<br class="sp-only-br" />現場に、<br /><span class="accent-text">テクノロジー</span>を。</h1>
           <p>
-            株式会社バレットは、Webマーケティング、Webサービス企画・開発・運用、ICT・システム支援を通じて、学校・自治体・企業の課題解決に取り組みます。
+            株式会社バレットは、Webマーケティング、Webサービス企画・開発・運用、ICT・システム支援を通じて、<span class="accent-text">学校・自治体・企業の課題解決</span>に取り組みます。
           </p>
-          <a class="scroll-cue" href="#mission" aria-label="下へスクロール">SCROLL</a>
         </div>
       </section>
 
@@ -56,14 +59,14 @@
         <p class="mega-title" aria-hidden="true">MISSION</p>
         <div class="section-heading centered reveal">
           <p class="eyebrow">Mission</p>
-          <h2>世の中をもっと素敵に、便利にする</h2>
+          <h2>世の中をもっと素敵に、<br class="sp-only-br" /><span class="accent-text">便利にする</span></h2>
         </div>
         <div class="mission-grid">
           <article class="mission-item reveal">
             <span>01</span>
             <div>
               <h3>デジタルマーケティング事業</h3>
-              <p>企業・自治体・教育機関の目的に合わせ、情報発信、集客、広報設計、改善運用までトータルで支援します。</p>
+              <p>企業・自治体・教育機関の目的に合わせ、情報発信、集客、広報設計、改善運用まで<span class="accent-text">トータルで支援</span>します。</p>
             </div>
           </article>
           <figure class="mission-photo image-card classroom-card reveal">
@@ -76,7 +79,7 @@
             <span>02</span>
             <div>
               <h3>教育をもっと楽しく効率的に！</h3>
-              <p>先生と児童が楽しく使えるICT環境を設計し、学校現場の学びと運用を効率化します。</p>
+              <p>先生と児童が楽しく使えるICT環境を設計し、学校現場の<span class="accent-text">学びと運用を効率化</span>します。</p>
             </div>
           </article>
           <article class="mission-item reveal">
@@ -152,6 +155,7 @@
         <a class="footer-logo" href="#top" aria-label="株式会社バレット ホーム">
           <img src="assets/logo/アイコン.png" alt="株式会社バレット ロゴ" />
         </a>
+        <p class="footer-company">株式会社バレット</p>
         <nav class="footer-links" aria-label="フッターナビゲーション">
           <a href="privacy-policy.html">個人情報保護方針</a>
           <a href="https://forms.gle/RUbGqja7ydPH21GW9" target="_blank" rel="noopener">お問い合わせ</a>
@@ -162,11 +166,29 @@
     </footer>
       <script>
       const siteHeader = document.getElementById("siteHeader");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const globalNav = document.getElementById("globalNav");
       const updateHeader = () => {
         siteHeader.classList.toggle("is-scrolled", window.scrollY > 60);
       };
       updateHeader();
       window.addEventListener("scroll", updateHeader, { passive: true });
+
+      if (menuToggle && globalNav) {
+        const closeMenu = () => {
+          siteHeader.classList.remove("is-menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const isOpen = siteHeader.classList.toggle("is-menu-open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        globalNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      }
 
       const revealElements = document.querySelectorAll(".reveal");
       if (!("IntersectionObserver" in window)) {
