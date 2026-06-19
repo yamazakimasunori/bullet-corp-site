@@ -160,6 +160,16 @@ dd { margin: 0; color: var(--text); }
 .service-grid article { min-height: 300px; padding: 34px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
 .service-grid span { color: #ff9f2e; font-family: Oswald, sans-serif; font-size: 30px; }
 .service-grid p { color: var(--text); }
+.service-banners-heading { margin-top: 72px; margin-bottom: 28px; }
+.service-banners-heading h2 { font-size: clamp(28px, 3.6vw, 44px); }
+.service-banners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1180px; margin: 0 auto; }
+.service-banner { position: relative; display: block; overflow: hidden; background: var(--white); border-radius: 18px; box-shadow: 0 18px 46px rgba(38,54,66,.16); transition: transform .25s ease, box-shadow .25s ease; }
+a.service-banner:hover { transform: translateY(-4px); box-shadow: 0 24px 58px rgba(38,54,66,.2); }
+.service-banner img { display: block; width: 100%; height: auto; }
+.service-banner--coming-soon { cursor: default; }
+.service-banner--coming-soon img { filter: grayscale(.18); opacity: .74; }
+.service-banner--coming-soon::after { content: ""; position: absolute; inset: 0; background: rgba(38,54,66,.32); }
+.service-banner__status { position: absolute; inset: 50% auto auto 50%; z-index: 1; padding: 8px 20px; color: var(--white); background: rgba(38,54,66,.86); border: 1px solid rgba(255,255,255,.74); border-radius: 999px; font-family: Oswald, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: .12em; line-height: 1; text-transform: uppercase; transform: translate(-50%, -50%); }
 
 .clients {
   position: relative;
@@ -222,7 +232,7 @@ dd { margin: 0; color: var(--text); }
   .news-bar { grid-template-columns: 1fr; gap: 8px; padding: 16px 34px 18px; }
   .news-bar span { font-size: 18px; }
   .news-bar a { font-size: 16px; font-weight: 500; line-height: 1.55; letter-spacing: .04em; }
-  .mission-grid, .service-grid, .client-list { grid-template-columns: 1fr; }
+  .mission-grid, .service-grid, .service-banners, .client-list { grid-template-columns: 1fr; }
   .mission { padding: 54px 24px 76px; }
   .mission::before { top: 118px; right: 0; left: auto; width: 52%; height: calc(100% - 210px); transform: none; }
   .mission::after { width: 92px; opacity: .1; }
@@ -249,6 +259,9 @@ dd { margin: 0; color: var(--text); }
   .classroom-card::after { content: "01"; }
   .support-card::after { content: "02"; }
   .mission-item:nth-of-type(3) > span { display: block; color: rgba(26,168,191,.82); font-family: Oswald, sans-serif; font-size: 72px; font-weight: 700; letter-spacing: .01em; line-height: 1; }
+  .service-banners-heading { margin-top: 44px; margin-bottom: 18px; }
+  .service-banners { gap: 16px; }
+  .service-banner { border-radius: 12px; }
   .message { background-attachment: scroll; }
   .message-panel { padding: 34px 22px; border-radius: 8px; }
   .footer-inner { gap: 20px; padding: 70px 24px 132px; }
