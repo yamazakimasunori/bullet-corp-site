@@ -98,6 +98,8 @@ a { color: inherit; text-decoration: none; }
 .hero-content { position: relative; z-index: 1; width: min(980px, calc(100% - 40px)); color: var(--white); text-align: center; }
 .eyebrow { margin: 0 0 12px; color: var(--cyan); font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
 .eyebrow.light { color: #bff7ff; }
+.accent-text { color: var(--cyan); }
+.hero-content .accent-text { color: #65edff; }
 h1, h2, h3, p { margin-top: 0; }
 h1 { margin-bottom: 22px; font-size: clamp(42px, 7vw, 84px); line-height: 1.16; letter-spacing: -.06em; text-shadow: 0 16px 38px rgba(0,0,0,.24); }
 h2 { font-size: clamp(30px, 4.6vw, 54px); line-height: 1.35; letter-spacing: -.04em; }
@@ -199,7 +201,6 @@ dd { margin: 0; color: var(--text); }
 .site-footer p { margin: 0; font-weight: 400; }
 .page-top { position: absolute; left: 50%; bottom: -58px; display: grid; place-items: start center; width: 118px; height: 118px; padding-top: 42px; color: var(--white); background: #2f2f2f; border: 0; border-radius: 50%; font-family: Oswald, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; transform: translateX(-50%); }
 .page-top::before { content: "↑"; position: absolute; top: 16px; font-size: 28px; font-weight: 300; line-height: 1; }
-.page-top::after { content: ""; position: absolute; top: -16px; left: 50%; width: 1px; height: 46px; background: rgba(255,255,255,.8); transform: translateX(-50%); }
 
 @media (max-width: 900px) {
   .site-header { position: fixed; align-items: center; flex-direction: row; padding: 14px 16px; color: var(--white); background: transparent; box-shadow: none; backdrop-filter: none; }
@@ -217,9 +218,9 @@ dd { margin: 0; color: var(--text); }
   .hero-content { text-align: center; }
   .hero-content p:not(.eyebrow) { font-size: 14px; margin-right: auto; margin-left: auto; }
   .scroll-cue { display: grid; margin: 0 auto; }
-  .news-bar { grid-template-columns: 1fr; gap: 10px; padding: 22px 34px 24px; }
+  .news-bar { grid-template-columns: 1fr; gap: 8px; padding: 16px 34px 18px; }
   .news-bar span { font-size: 18px; }
-  .news-bar a { font-size: 16px; font-weight: 500; line-height: 1.7; letter-spacing: .04em; }
+  .news-bar a { font-size: 16px; font-weight: 500; line-height: 1.55; letter-spacing: .04em; }
   .mission-grid, .service-grid, .client-list { grid-template-columns: 1fr; }
   .mission { padding: 54px 24px 76px; }
   .mission::before { top: 118px; right: 0; left: auto; width: 52%; height: calc(100% - 210px); transform: none; }
@@ -229,10 +230,10 @@ dd { margin: 0; color: var(--text); }
   .mission-grid { gap: 18px; align-items: start; }
   .mission-item, .mission-photo, .profile-card { grid-column: 1; }
   .mission-item { position: relative; display: block; padding: 0 0 34px; }
-  .mission-item span { display: none; }
-  .mission-item h3 { margin-bottom: 8px; font-size: 20px; }
+  .mission-item > span { display: none; }
+  .mission-item h3 { margin-bottom: 8px; font-size: 22px; font-weight: 800; line-height: 1.42; letter-spacing: -.02em; }
   .mission-item h3::after { width: 28px; margin: 10px 0 16px; }
-  .mission-item p { font-size: 14px; line-height: 1.9; }
+  .mission-item p { font-size: 14px; font-weight: 400; line-height: 1.95; letter-spacing: .01em; }
   .mission-photo { position: relative; margin-top: 12px; }
   .mission-photo img { min-height: 0; height: auto; box-shadow: 0 16px 36px rgba(38,54,66,.14); }
   .image-card img, .support-card img { border-radius: 0 38px 0 38px; }
@@ -242,10 +243,10 @@ dd { margin: 0; color: var(--text); }
   .mission-item:nth-of-type(2) { order: 4; }
   .mission-item:nth-of-type(3) { order: 5; }
   .profile-card { order: 6; padding: 24px 20px; }
-  .classroom-card::after, .support-card::after { position: absolute; right: 12px; bottom: -20px; color: rgba(26,168,191,.78); font-family: Oswald, sans-serif; font-size: 74px; line-height: 1; }
+  .classroom-card::after, .support-card::after { position: absolute; right: 12px; bottom: -18px; color: rgba(26,168,191,.82); font-family: Oswald, sans-serif; font-size: 78px; font-weight: 500; letter-spacing: .02em; line-height: 1; }
   .classroom-card::after { content: "01"; }
   .support-card::after { content: "02"; }
-  .mission-item:nth-of-type(3) span { display: block; color: var(--cyan); font-family: Oswald, sans-serif; font-size: 54px; line-height: 1; }
+  .mission-item:nth-of-type(3) > span { display: block; color: rgba(26,168,191,.82); font-family: Oswald, sans-serif; font-size: 78px; font-weight: 500; letter-spacing: .02em; line-height: 1; }
   .message { background-attachment: scroll; }
   .message-panel { padding: 34px 22px; border-radius: 8px; }
   .footer-inner { gap: 20px; padding: 70px 24px 132px; }
