@@ -166,10 +166,6 @@ dd { margin: 0; color: var(--text); }
 .service-banner { position: relative; display: block; overflow: hidden; background: var(--white); border-radius: 18px; box-shadow: 0 18px 46px rgba(38,54,66,.16); transition: transform .25s ease, box-shadow .25s ease; }
 a.service-banner:hover { transform: translateY(-4px); box-shadow: 0 24px 58px rgba(38,54,66,.2); }
 .service-banner img { display: block; width: 100%; height: auto; }
-.service-banner--coming-soon { cursor: default; }
-.service-banner--coming-soon img { filter: grayscale(.18); opacity: .74; }
-.service-banner--coming-soon::after { content: ""; position: absolute; inset: 0; background: rgba(38,54,66,.32); }
-.service-banner__status { position: absolute; inset: 50% auto auto 50%; z-index: 1; padding: 8px 20px; color: var(--white); background: rgba(38,54,66,.86); border: 1px solid rgba(255,255,255,.74); border-radius: 999px; font-family: Oswald, sans-serif; font-size: 18px; font-weight: 700; letter-spacing: .12em; line-height: 1; text-transform: uppercase; transform: translate(-50%, -50%); }
 
 .clients {
   position: relative;
