@@ -105,9 +105,9 @@ h1 { margin-bottom: 22px; font-size: clamp(42px, 7vw, 84px); line-height: 1.16; 
 h2 { font-size: clamp(30px, 4.6vw, 54px); line-height: 1.35; letter-spacing: -.04em; }
 h3 { font-size: 22px; line-height: 1.45; }
 .hero-content p:not(.eyebrow) { max-width: 760px; margin: 0 auto 36px; font-size: 17px; }
-.news-bar { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; padding: 28px clamp(24px, 7vw, 120px); color: var(--white); background: var(--cyan); }
+.news-bar { display: grid; grid-template-columns: auto 1fr; column-gap: 28px; row-gap: 10px; align-items: center; padding: 16px clamp(24px, 7vw, 120px); color: var(--white); background: var(--cyan); }
 .news-bar span { font-family: Oswald, sans-serif; letter-spacing: .1em; }
-.news-bar p, .news-bar a { margin: 0; color: var(--white); font-weight: 500; line-height: 1.9; letter-spacing: .03em; }
+.news-bar p, .news-bar a { margin: 0; color: var(--white); font-weight: 500; line-height: 1.6; letter-spacing: .03em; }
 .news-bar a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 .section-heading { max-width: 840px; margin: 0 auto 54px; }
@@ -225,9 +225,9 @@ a.service-banner:hover { transform: translateY(-4px); box-shadow: 0 24px 58px rg
   .hero { min-height: 100svh; padding: 120px 0 94px; }
   .hero-content { text-align: center; }
   .hero-content p:not(.eyebrow) { font-size: 14px; margin-right: auto; margin-left: auto; }
-  .news-bar { grid-template-columns: 1fr; gap: 8px; padding: 16px 34px 18px; }
+  .news-bar { grid-template-columns: 1fr; gap: 4px; padding: 12px 34px 14px; }
   .news-bar span { font-size: 18px; }
-  .news-bar a { font-size: 16px; font-weight: 500; line-height: 1.55; letter-spacing: .04em; }
+  .news-bar a { font-size: 16px; font-weight: 500; line-height: 1.45; letter-spacing: .04em; }
   .mission-grid, .service-grid, .service-banners, .client-list { grid-template-columns: 1fr; }
   .mission { padding: 54px 24px 76px; }
   .mission::before { top: 118px; right: 0; left: auto; width: 52%; height: calc(100% - 210px); transform: none; }
